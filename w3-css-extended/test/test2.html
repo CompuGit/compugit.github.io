@@ -1,0 +1,155 @@
+<style>
+    @keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
+
+body {
+  max-width: 37.5rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  font-family: 'Lato', sans-serif;
+}
+
+
+
+
+
+.container {
+  position: relative;
+  padding-top: 75%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
+}
+
+.carousel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: hidden;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  background-color: #f99;
+
+}
+
+.carousel-item:nth-child(even) {
+  background-color: #99f;
+}
+
+
+.carousel__snapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+@media (hover: hover) {
+  .carousel__snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  .carousel-item:last-child .carousel__snapper {
+    animation-name: tostart, snap;
+  }
+}
+
+.carousel:hover .carousel__snapper
+{
+  animation-name: none;
+}
+
+
+
+</style>
+<h1>CSS-only Carousel</h1>
+
+<p>This carousel is created with HTML and CSS only.</p>
+
+<section class="container" aria-label="Gallery">
+  <div class="carousel">
+    <div 
+        tabindex="0"
+        class="carousel-item carousel__snapper">
+      
+      
+    </div>
+    <div 
+        tabindex="0"
+        class="carousel-item carousel__snapper">
+  
+    </div>
+    <div 
+        tabindex="0"
+        class="carousel-item carousel__snapper">
+      
+    </div>
+    <div 
+        tabindex="0"
+        class="carousel-item carousel__snapper">
+      
+    </div>
+    <div 
+        tabindex="0"
+        class="carousel-item carousel__snapper">
+      
+    </div>
+</div>
+
+</section>

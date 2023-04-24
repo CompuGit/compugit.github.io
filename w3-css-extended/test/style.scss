@@ -1,0 +1,46 @@
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .box {
+    --n:5;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  }
+  
+  .box::before,
+  .box::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .box::before {
+    left: -110px;
+    background-color: green;
+    content: "";
+    @for $i from 1 through var(--n) {
+      content: "#{$content} \n" "";
+    }
+  }
+  
+  .box::after {
+    left: 110px;
+    background-color: blue;
+    content: "";
+    @for $i from 1 through var(--n) {
+      content: "#{$content} \n" "";
+    }
+  }
+  
+  .box:not(:last-child) {
+    margin-right: 10px;
+  }
+  

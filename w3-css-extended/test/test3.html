@@ -1,0 +1,33 @@
+<div class="circle-container">
+    <div class="circle"></div>
+</div>
+
+<style>
+.circle-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 10px;
+  width: 500px;
+  height: 500px;
+  background-color: lightgray;
+  padding: 10px;
+}
+
+.circle-container::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.circle-container > * {
+  grid-column: span 1;
+  grid-row: span 1;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  background-color: black;
+}
+
+</style>

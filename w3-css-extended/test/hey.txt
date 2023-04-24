@@ -1,0 +1,7 @@
+w3-carousel-item
+w3-carousel-scroll
+w3-carousel-slide
+w3-carousel-fade
+
+w3-bg-anim
+w3-bg-sprinkle
