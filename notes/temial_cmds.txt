@@ -1,0 +1,19 @@
+docker exec -it apache_php_server /bin/bash
+
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql_db_server
+
+docker run -d -p 80:80 -v "$PWD":/var/www/html php:7.3-apache
+docker run -d -p 80:80 --mount type=bind,source="$(pwd)",target=/var/www/html php:7.3-apache
+
+python -c 'import secrets; print(secrets.token_hex(16))'
+
+sudo cp ./nature.jpeg /usr/share/backgrounds/nature.jpeg
+sudo ~/tmp/ubuntu-gdm-set-background --image /usr/share/backgrounds/nature.jpeg
+
+
+ 
+docker run --name MongoDB --network new -p 27017:27017 -d mongo
+docker run --name MongoEx --network new -p 8081:8081 -e ME_CONFIG_MONGODB_SERVER=MongoDB -d mongo-express
+
+docker run --name MySQLDB --network new -e MYSQL_ROOT_PASSWORD=Root@123 -p 3306:3306 -d mysql
+docker run --name phpmyadmin --network new --link MySQLDB:db -p 8080:80 -d phpmyadmin

@@ -1,0 +1,12 @@
+npm install create-react-app@latest
+npm uninstall -g create-react-app
+npx create-react-app my-react-app
+cd my-react-app
+npm start
+npm i react@latest react-dom@latest react-router-dom@latest bootstrap@5.3.0
+npm run build
+npm test
+npm run eject
+
+  npm install -g serve
+  serve -s build

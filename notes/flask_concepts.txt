@@ -1,0 +1,62 @@
+Fundamentals
+	intro to flask and first app
+	url_rule - view_func, endpoints with functions, defaults, methods
+	views - functions, view classes, methodview classes			
+
+	static routes
+	dynamic routes - params
+	
+	http - 
+		request - args, form, headers, json, data
+		methods - get, post
+		response - make_response
+	url bulding [url_for, redirect]
+	
+	forms
+	uploads
+	web templating with jinja2 - render_template_string
+		jinja - 
+			variables
+			if elif else
+			for loop
+			filters - safe, autoescape false-endautoescape
+			app.jinja_env['format']
+			app.jinja_env.filters['reverse']=reverese
+	flashing
+	sessions - permanent sessions timedelta
+
+Structures
+	packaging
+	static files - send_from_directory('static, path), url_for('static', filename='js/actions.js')
+	templates-jinja
+		blocks
+		include
+		extends
+	blueprints
+	tests
+
+Database
+	g
+	database with mysqlclient
+	CRUD Operations inculdes methods
+
+Extensions
+	flask-sqlalchemy
+	flask-wtf [csrf]
+	flask-login
+
+Deployment
+	Docker
+	gcloud/aws
+
+
+
+Database concepts
+	DBMS Objects & theory
+	Mysql server
+	Sql Commands
+	Sqlite
+	server connection with python
+	
+
+

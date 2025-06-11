@@ -1,0 +1,18 @@
+__init__(): Called when an object is created, often used for initialization.
+__str__(): Defines the string representation of an object.
+__repr__(): Provides a more detailed representation for debugging.
+__len__(): Defines the length of an object.
+__getitem__(): Implements indexing for objects.
+__setitem__(): Implements item assignment for objects.
+__delitem__(): Implements item deletion for objects.
+__iter__(): Makes an object iterable.
+__next__(): Defines the next element in an iterator.
+__add__(): Implements addition for objects.
+__sub__(): Implements subtraction for objects.
+__mul__(): Implements multiplication for objects.
+__div__(): Implements division for objects.
+__eq__(): Implements equality comparison for objects.
+__lt__(): Implements less than comparison for objects.
+__le__(): Implements less than or equal to comparison for objects.
+__gt__(): Implements greater than comparison for objects.
+__ge__(): Implements greater than or equal to comparison for objects.

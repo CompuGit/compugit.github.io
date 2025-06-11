@@ -1,0 +1,63 @@
+mongo community edditon download install
+mongosh
+
+== commands ==
+show dbs
+use <existing or new>
+db.dropDatabase()
+
+cls
+exit
+
+show collections
+
+db
+db.users.insertOne({ name: "poorna"})
+db.users.find()
+
+db.users.insertMany([{ name: "venkata", address: "mtm"}, { name: "sai"}])
+
+db.users.find().limit(2)
+db.users.find().sort({ name: 1}).limit(5) //1 for accending, -1 for decending
+
+find()
+findOne()
+countDocuments()
+sort()
+limit()
+skip(1)
+
+find({name :"kyle"}, {name:1,age:1, _id:0 })
+
+//complex query
+atomic operators
+find({name : { $eq:"sally"}})
+
+$eq, $ne, $gt, $gte, $lt, $lte
+$in, $nin : ['', '']
+$exists : true
+
+{$and : [{age : 26}, {name: "kyle"}]}
+{$or : [{age : {$lte: 20}}, {name: "kyle"}]}
+{age : { $not : {$lte:20}}}
+
+{$expr : { $gt :["$debt", "$balance"]}}
+
+{"address.street" : ""}
+
+
+
+
+//patch
+db.user.updateOne({_id: Object()}, {$set: {age: 27}})
+$set, $inc, $rename, $unset, $push, $pull
+updateMany({address : {$exists: true}},{$unset:{address: ""}})
+
+//put
+replaceOne({age:30},{name: "john"})
+
+db.users.deleteOne()
+deleteMany()
+
+
+CRUD operations

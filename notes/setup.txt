@@ -1,0 +1,152 @@
+wsl
+git
+zsh
+terraform
+awscli
+python
+node
+kubectl
+sops
+
+https://gitify.io
+
+==========================================================
+WSL setup
+==========================================================
+https://learn.microsoft.com/en-us/windows/wsl/install
+
+wsl --install
+wsl --set-default-version 2
+swl --list --online
+wsl --install -d Ubuntu-20.04
+wsl --update --web-download
+==========================================================
+Linux Setup
+==========================================================
+sudo apt-get upgrade
+sudo apt-get install git-all
+git version
+
+================================
++++GIT config+++
+================================
+
+git config --global user.email "<email>"
+git config --global user.name "<name>"
+
+===============================
++++GIT SSH config+++
+===============================
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh
+
+ssh-keygen -t ed25519 -C "<github email>"
+eval "$(ssh-agent -s)"
+touch ~/.ssh/config
+nano ~/.ssh/config
+
+Host *
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+
+ssh-add ~/.ssh/id_ed25519
+
+cat ~/.ssh/id_ed25519.pub #add key to ssh keys in github settings as authentication key
+ssh -T git@github.com
+
+===============================
++++GIT SSH config for verified commits+++
+===============================
+ssh-keygen -t ed25519 -C "<github email>" #verified-commit
+cat ~/.ssh/verified-commit.pub #add key to ssh keys in github settings as signing key
+
+git config --global user.signingkey "$(cat ~/.ssh/verified-commit.pub)"
+git config --global gpg.format ssh
+git config --global commit.gpgSign true
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/verified-commit
+
+
+==========================================================
+ZSH 
+==========================================================
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+==========================================================
+Node
+==========================================================
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+nvm install --lts #latest
+nvm install node  #current
+
+===============================
++++NPM commands+++
+===============================
+npm login --registry=https://infyartifactory.jfrog.io/artifactory/api/npm/npm-remote/ --auth-type=web
+npm i
+npm run start
+
+https://www.npmjs.com/package/@jonmatum/react-cookie-devtool
+npm install --save-dev @jonmatum/react-cookie-devtool
+
+npm install json-server -g --registry https://infyartifactory.jfrog.io/artifactory/api/npm/npm-remote/
+
+==========================================================
+SOPS
+==========================================================
+https://github.com/getsops/sops/releases
+
+
+==========================================================
+pre-commit
+==========================================================
+pip install pre-commit
+pre-commit --version
+pre-commit install
+
+* if certificate error in
+
+pre-commit run -a
+
+touch ~/.config/pip/pip.conf
+nano ~/.config/pip/pip.conf
+
+[global]
+trusted-host = pypi.python.org
+	       pypi.org
+	       files.pythonhosted.org
+
+==========================================================
+terraform
+==========================================================
+terraform --version
+terraform init
+terraform plan
+
+
+==========================================================
+awscli
+==========================================================
+aws configure
+
+
+==========================================================
+aws developer tools
+==========================================================
+
+cloud9 - editor
+codecommit - source control
+codebuild - CI
+codedeploy - CD
+codepipeline - CICD
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+==========================================================
+tailwind
+react
+vite vs create-react-app(cra)
+storybook.js.org
+spacelift vs jenkins
+
