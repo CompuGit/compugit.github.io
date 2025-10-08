@@ -1,0 +1,51 @@
+npm create vite@latest
+npm create vite@latest paatam -- --template react
+
+npx shadcn@latest add --all
+
+
+npm install tailwindcss @tailwindcss/vite
+npm install /home/compugit/compugit/shadcn/compugit-shadcn-1.0.0.tgz
+
+
+
+mkdir react-rbac
+cd react-rbac
+npm init -y
+
+Replace `@your-username/react-rbac` with your actual npm username
+copy src
+
+npm install
+npm run build
+npm pack
+npm install /path/to/your-library.tgz
+npm login
+npm publish --access public
+npm install @your-username/react-rbac
+
+npm version patch  # for bug fixes
+npm version minor  # for new features
+npm version major  # for breaking changes
+npm publish
+
+
+
+
+
+
+
+
+git remote add backendrepo https://github.com/otherdev/BackendRepo.git
+git subtree add --prefix=backend backendrepo main --squash
+git fetch backendrepo
+git subtree pull --prefix=backend backendrepo main --squash
+
+git add backend/
+git commit -m "Custom updates to backend subtree"
+git subtree push --prefix=backend backendrepo main
+
+
+
+ip addr show eth0 | grep inet
+netsh interface portproxy add v4tov4 listenport=5000 listenaddress=0.0.0.0 connectport=5000 connectaddress=172.20.217.167
