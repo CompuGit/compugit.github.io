@@ -67,6 +67,8 @@ git config --global commit.gpgSign true
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/verified-commit
 
+# add gvc as an alias to sign verified commits
+alias gvc='git config --global user.signingkey "$(cat ~/.ssh/verified-commit.pub)"; git config --global gpg.format ssh; git config --global commit.gpgSign true; eval "$(ssh-agent -s)"; ssh-add ~/.ssh/verified-commit'
 
 ==========================================================
 ZSH 
@@ -150,5 +152,6 @@ react
 vite vs create-react-app(cra)
 storybook.js.org
 spacelift vs jenkins
+
 
 
