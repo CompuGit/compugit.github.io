@@ -56,6 +56,7 @@ ssh -T git@github.com
 ===============================
 +++GIT SSH config for verified commits+++
 ===============================
+cd ~/.ssh
 ssh-keygen -t ed25519 -C "<github email>" #verified-commit
 cat ~/.ssh/verified-commit.pub #add key to ssh keys in github settings as signing key
 
@@ -149,4 +150,5 @@ react
 vite vs create-react-app(cra)
 storybook.js.org
 spacelift vs jenkins
+
 
