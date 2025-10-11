@@ -36,7 +36,7 @@ npm publish
 
 
 
-git remote add backendrepo https://github.com/otherdev/BackendRepo.git
+git remote add backendrepo git@github.com:CompuGit/backend.git
 git subtree add --prefix=backend backendrepo main --squash
 git fetch backendrepo
 git subtree pull --prefix=backend backendrepo main --squash
@@ -48,4 +48,5 @@ git subtree push --prefix=backend backendrepo main
 
 
 ip addr show eth0 | grep inet
+
 netsh interface portproxy add v4tov4 listenport=5000 listenaddress=0.0.0.0 connectport=5000 connectaddress=172.20.217.167
