@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            margin: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #718096;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            transition: background 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #5a67d8;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Projects</h1>
+        <p style="text-align: center; color: #718096; margin-bottom: 1rem;">
+            Welcome to my collection of web projects and applications
+        </p>
+
+        <div class="projects">
+            <div class="project-card">
+                <div class="project-title">Flipkart Clone</div>
+                <div class="project-description">
+                    E-commerce website clone with home, login, registration, and contact pages
+                </div>
+                <div class="project-links">
+                    <a href="flipcart_clone/home.html" class="project-link">Home</a>
+                    <a href="flipcart_clone/login.html" class="project-link">Login</a>
+                    <a href="flipcart_clone/Registration.html" class="project-link">Register</a>
+                    <a href="flipcart_clone/contact.html" class="project-link">Contact</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">JavaScript Games & Tools</div>
+                <div class="project-description">
+                    Collection of interactive JavaScript applications and games
+                </div>
+                <div class="project-links">
+                    <a href="js/calculator.html" class="project-link">Calculator</a>
+                    <a href="js/ludo.html" class="project-link">Ludo Game</a>
+                    <a href="js/stopwatach.html" class="project-link">Stopwatch</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Service Worker Demo</div>
+                <div class="project-description">
+                    Progressive Web App features with service workers and notifications
+                </div>
+                <div class="project-links">
+                    <a href="service worker/index_.html" class="project-link">Main App</a>
+                    <a href="service worker/notification.html" class="project-link">Notifications</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Built with ❤️ | October 2025</p>
+        </div>
+    </div>
+</body>
+</html>
