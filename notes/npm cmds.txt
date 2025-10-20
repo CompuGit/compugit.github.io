@@ -45,8 +45,27 @@ git add backend/
 git commit -m "Custom updates to backend subtree"
 git subtree push --prefix=backend backendrepo main
 
+git tag
+git tag v1.0
+git tag -a v1.1 -m "release verion 1.1"
+git show v1.1
+git tag -l "v1.*"
+git push origin v1.1
+pit push --tags
+git tag -d v1.1
+git tag --delete v1.1
+git push origin -d v1.1 v1.2
+git tag <tagname> <commit>
+
+git worktree add ../repo-hotfix branch
+git worktree remove .
+git worktree list
+
+git config --global alias.wta "worktree add"   # git wta
+
 
 
 ip addr show eth0 | grep inet
 
 netsh interface portproxy add v4tov4 listenport=5000 listenaddress=0.0.0.0 connectport=5000 connectaddress=172.20.217.167
+
