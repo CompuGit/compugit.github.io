@@ -20,6 +20,19 @@ wsl --set-default-version 2
 swl --list --online
 wsl --install -d Ubuntu-20.04
 wsl --update --web-download
+
+=========================================================
+linux username changes
+=========================================================
+wsl --terminate <distro>
+wsl -u root -d <distro>
+usermod -l NewUser OldUser
+usermod -d /home/NewUser -m NewUser
+groupmod -n compugit nanomite
+sudo nano /etc/wsl.conf
+	[user]
+	default=NewUser
+
 ==========================================================
 Linux Setup
 ==========================================================
@@ -57,7 +70,7 @@ ssh -T git@github.com
 +++GIT SSH config for verified commits+++
 ===============================
 cd ~/.ssh
-ssh-keygen -t ed25519 -C "<github email>" #verified-commit
+ssh-keygen -t ed25519 -C "<github email>" -f ~/.ssh/verified-commit #verified-commit
 cat ~/.ssh/verified-commit.pub #add key to ssh keys in github settings as signing key
 
 git config --global user.signingkey "$(cat ~/.ssh/verified-commit.pub)"
